@@ -1,5 +1,6 @@
 <!-- Navbar Index-->
-<nav th:fragment="navbarIndex" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+<nav th:fragment="navbarIndex" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3"
+     xmlns:th="http://www.w3.org/1999/xhtml">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="/">
             <img src="/images/logo.svg" alt="Logo" class="me-2 logo-navbar" />
@@ -29,6 +30,32 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+                <!-- dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-gears me-1"></i>
+                        Gestión
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- proyectos -->
+                        <li>
+                            <a class="dropdown-item" th:href="@{/projects}">
+                                <i class="fa-solid fa-folder-open me-2"></i>
+                                Proyectos
+                            </a>
+                        </li>
+
+                        <!-- tareas -->
+                        <li>
+                            <a class="dropdown-item" th:href="@{/tasks}">
+                                <i class="fa-solid fa-tasks me-2"></i>
+                                Tareas
+                            </a>
+                        </li>
+
+                        <!-- comentarios -->
+                    </ul>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,6 +77,7 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </div>
     </div>
